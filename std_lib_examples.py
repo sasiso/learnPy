@@ -35,7 +35,31 @@ def demo_abs():
 #isinstance()	
 #ord()	
 #sum()
-#bytearray()	
+#bytearray()
+def demo_bytearray():
+    """
+    Return a new array of bytes. The bytearray type is a mutable sequence of integers in the range 0 <= x < 256. It has most of the usual methods of mutable sequences, described in Mutable Sequence Types, as well as most methods that the bytes type has, see Bytes and Byte Array Methods.
+
+    The optional source parameter can be used to initialize the array in a few different ways:
+
+    If it is a string, you must also give the encoding (and optionally, errors) parameters; bytearray() then converts the string to bytes using str.encode().
+    If it is an integer, the array will have that size and will be initialized with null bytes.
+    If it is an object conforming to the buffer interface, a read-only buffer of the object will be used to initialize the bytes array.
+    If it is an iterable, it must be an iterable of integers in the range 0 <= x < 256, which are used as the initial contents of the array.
+    """
+    l=[]
+    for i in range(100):
+      l.append(l)
+
+    b = bytearray(str(l))
+    print b
+    for i in b:
+      i += 1
+
+    print b
+
+
+
 #filter()	
 #issubclass()	
 #pow()	
@@ -76,4 +100,4 @@ def demo_abs():
 
 
 demo_abs()
-
+demo_bytearray()

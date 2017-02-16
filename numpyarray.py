@@ -1,11 +1,20 @@
+import zipfile
+
 from numpy import *
+from numpy.core.defchararray import array
 from numpy.core.multiarray import arange
+import os
+a = arange(9)
+a.shape = (3,3,1)
 
-a = arange(15).reshape(3, 5)
-print a.shape
-print a.ndim
-print a.itemsize
-print a.size
+CannedImages = zipfile.ZipFile("C:\\archive\\gerrit\\BurtonInstrument\\src\\focus_images\\focus_images.zip")
+inputImage = CannedImages.open("image0500.png").read()
 
 
-print type(zeros((3, 4)))
+a = bytearray(memoryview(inputImage))
+b = a[0:6]
+
+if 'PNG' in b:
+    print "success"
+else:
+    print "failure"
