@@ -1,6 +1,6 @@
 import os
 d = {}
-d["w02_z00.mp4"]=  95040670
+d["w01_z99.mp4"]=  133299 + 1
 d["w02_z01.mp4"]=   122116749
 d["w02_z02.mp4"]=   125734963
 d["w02_z03.mp4"]=   126154867
@@ -29,16 +29,18 @@ d["w07_z07.mp4"]=   118486376
 d["w07_z99.mp4"]=  99738286
 
 
-root = "C:\\Users\\sss\\Desktop\\Example_Patient_Work\\video-trucated"
+root = "C:\\Users\\sss\\Desktop\\Test"
 
 i = 1
 
 for key, value in d.items():
     print i, " - truncating ", key
-
-    fo = open(os.path.join(root,key), 'r+')
-    fo.truncate(value+1)
-    fo.close()
+    try:
+        fo = open(os.path.join(root,key), 'r+')
+        fo.truncate(value+1)
+        fo.close(       )
+    except Exception as ex:
+        print  ex
 
 
 while True:
